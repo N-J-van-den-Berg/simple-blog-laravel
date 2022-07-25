@@ -10,6 +10,15 @@
     <title>E-commerce project</title>
 </head>
 <body>
-    
+    {{View::make('header')}}
+    @yield('content')
+    {{View::make('footer')}}
 </body>
+<style>
+    .custom-login { 
+        height: 850px;
+        padding-top:100px;
+    }
+
+</style>
 </html>
