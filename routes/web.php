@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('login');
 });
 
@@ -23,3 +24,6 @@ Route::get('/hello', function () {
             ->header('Content-Type', 'text/html')
             ->header('foo', 'bar'); // Custom 
 });
+
+Route::post("/login", [UserController::class, 'login']);
+Route::get("/", [ProductController::class, 'index']);
