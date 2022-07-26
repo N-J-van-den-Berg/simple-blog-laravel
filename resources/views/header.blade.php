@@ -26,6 +26,18 @@ $total = ProductController::cartItem();
       <ul class="nav navbar-nav navbar-right">
         <li class="nav-item">
           <a class="nav-link" href="#">Cart({{$total}})</a>
+          @if(Session::has('user'))
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{Session::get('user')['name']}}
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+          </ul>
+        </li>
+        @else
+        <a class="nav-link" href="/login">Login</a>
+        @endif
         </li>
       </ul>
     </div>
