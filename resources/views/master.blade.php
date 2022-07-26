@@ -48,5 +48,8 @@
     .footer { 
         clear:both;
     }
+    .detail-img { 
+        height: 200px;
+    }
 </style>
 </html>
